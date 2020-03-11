@@ -1,7 +1,7 @@
-#### 利用php进行ocr识别
+### 利用php进行ocr识别
 
 
-#####Installation
+##### Installation
 * [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) > 3.02
 * composer require thiagoalessio/tesseract_ocr
 
@@ -16,7 +16,7 @@ echo $result;
 ```
 
 ```
-tesseract ocr"
+tesseract ocr
 ```
 
 <br/>
