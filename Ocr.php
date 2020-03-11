@@ -2,14 +2,10 @@
 
 class Ocr
 {
-    const LOCAL_IMG  = 1;
-    const REMOTE_IMG = 2;
-
     const SAVE_PATH = './runtime-img';
 
     public $imgPath;
-
-    public $resource = null;
+    public $resource;
 
     private $lang = 'eng'; // 默认识别英文
 
@@ -113,31 +109,55 @@ class Ocr
         switch ($type) {
             case 'jpeg':
                 $img_save_func = 'imagejpeg';
-                $args = [$this->resource, null, 100];
+                $args          = [
+                    $this->resource,
+                    null,
+                    100,
+                ];
                 break;
             case 'png':
                 $img_save_func = 'imagepng';
-                $args = [$this->resource, null, 9];
+                $args          = [
+                    $this->resource,
+                    null,
+                    9,
+                ];
                 break;
             case 'bmp':
                 $img_save_func = 'imagebmp';
-                $args = [$this->resource, null];
+                $args          = [
+                    $this->resource,
+                    null,
+                ];
                 break;
             case 'gif':
                 $img_save_func = 'imagegif';
-                $args = [$this->resource, null];
+                $args          = [
+                    $this->resource,
+                    null,
+                ];
                 break;
             case 'vnd.wap.wbmp':
                 $img_save_func = 'imagewbmp';
-                $args = [$this->resource, null];
+                $args          = [
+                    $this->resource,
+                    null,
+                ];
                 break;
             case 'xbm':
                 $img_save_func = 'imagexbm';
-                $args = [$this->resource, null];
+                $args          = [
+                    $this->resource,
+                    null,
+                ];
                 break;
             default:
                 $img_save_func = 'imagejpeg';
-                $args = [$this->resource, null, 100];
+                $args          = [
+                    $this->resource,
+                    null,
+                    100,
+                ];
         }
 
         call_user_func_array($img_save_func, $args);
